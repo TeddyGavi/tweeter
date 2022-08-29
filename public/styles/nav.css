@@ -1,4 +1,5 @@
 nav {
+  position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -13,16 +14,16 @@ nav {
   padding-right: 1.5em;
  }
 
-.header-title {
+.nav-title {
   display: flex;
   font-size: larger;
+
  }
 
 .right {
   display: flex;
-  flex-flow: column;
+  flex-direction: column;
   padding-bottom: .25em;
-
 }
 
 .header-text-right {
