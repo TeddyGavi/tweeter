@@ -1,0 +1,39 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  align-items: flex-end;
+  font-family: 'Bungee', sans-serif;
+  font-size: larger;
+  width: 100vw;
+  height: 120px;
+  background-color: #4056A1;
+  color: #FFFFFF; 
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+ }
+
+.header-title {
+  display: flex;
+  font-size: larger;
+ }
+
+.right {
+  display: flex;
+  flex-flow: column;
+  padding-bottom: .25em;
+
+}
+
+.header-text-right {
+  display: flex;
+  font-size: smaller;
+  font-family: 'Source Sans Pro', sans-serif;
+ }
+
+.arrow {
+  display: flex;
+  font-size: smaller;
+  justify-content: center;
+ }
+ 
