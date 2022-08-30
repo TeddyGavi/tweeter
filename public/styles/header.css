@@ -1,21 +1,20 @@
+#header {
+  display: flex;  
+}
+
 header {
-  /* position: absolute; */
-  /* margin-top: 120px;
+  margin-top: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   height: 400px;
-  width: 100%; */
-/* 
-  background-color: #5398a1;
-  background-image: url("https://www.transparenttextures.com/patterns/connected.png"); */
+  width: 100vw; 
+
+  background-color: #68b5bf;
+  background-image: url(https://www.toptal.com/designers/subtlepatterns/uploads/trees.png); */
 /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
 
 
-/* h2 {
-  display: flex;
-
-} */

@@ -15,8 +15,6 @@ html {
  */
 
 body {
-  /* display: flex; */
-  /* flex-direction: column; */
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
@@ -29,12 +27,14 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- /* main {
+.container {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 90%;
+  margin: auto;
   background-color: #f4f1ec;
-  justify-content: center;
   align-items: center;
-  text-align: center;
- } */
+  justify-content: center;
+ }
+
+ 
