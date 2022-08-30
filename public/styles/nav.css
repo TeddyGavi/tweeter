@@ -1,4 +1,4 @@
-nav {
+/* nav {
   position: fixed;
   display: flex;
   justify-content: space-between;
@@ -37,4 +37,50 @@ nav {
   font-size: smaller;
   justify-content: center;
  }
- 
+  */
+
+
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: fixed;
+  margin-top: 0px;
+  width: 100vw;
+  height: 120px;
+  color: #FFFFFF;
+  background-color: #4056A1;
+  font-family: 'Bungee', sans-serif;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+
+.nav-right {
+  font-family: 'Source Sans Pro', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#nav-title {
+  display: flex;
+  align-items: flex-start;
+}
+#arrow {
+  display: flex;
+  justify-content: center;
+}
+
+#arrow:hover {
+  color: red;
+}
