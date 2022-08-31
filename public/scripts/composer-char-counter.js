@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  console.log(document);
+  
 
  
 
@@ -7,11 +7,25 @@ $(document).ready(function(){
     // console.log(this);
     const charCount = $(this).val().length
     const charLeft = 140 - charCount;
-    if (charLeft <= 0) {
-      
-    }
-    $(this).siblings().children(".counter").html(charLeft)
+    const counterNum = $(this).siblings().children(".counter")
 
+   counterNum.html(charLeft)
+
+   counterNum.toggleClass("counter-below", charLeft < 0)
+
+    // if (charLeft > 0) {
+    //   counterNum.removeClass("counter-below")
+    // }
+    // else if (charLeft < 0) {
+    //   counterNum.addClass("counter-below")
+    // }
+    
+    // if (charLeft > 0) {
+    //   counterNum.css("color", "black")
+    // }
+    // else if (charLeft < 0) {
+    //   counterNum.css("color", "red")
+    // }
 
   });
 

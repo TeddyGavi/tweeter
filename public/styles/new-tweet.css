@@ -72,3 +72,7 @@ label {
   flex-direction: row;
   justify-content: space-between;;
 }
+
+.counter.counter-below {
+  color: red;
+}
