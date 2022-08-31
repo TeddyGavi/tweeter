@@ -33,7 +33,7 @@ body {
   width: 90%;
   margin: auto;
   background-color: #f4f1ec;
-  align-items: center;
+  align-items: space-evenly;
   justify-content: center;
  }
 
