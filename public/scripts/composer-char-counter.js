@@ -2,17 +2,18 @@
 
 $(document).ready(function() {
   
-  $("#tweet-text").on('input', function() {
-    // console.log(this);
+  $("#tweet-text").on('input', function(e) {
+    e.stopPropagation();
     const charCount = $(this).val().length;
     const charLeft = 140 - charCount;
     const counterNum = $(this).siblings().children(".counter");
-
+   
     counterNum.html(charLeft);
 
     counterNum.toggleClass("counter-below", charLeft < 0);
+
   });
 
-
+  
 });
 
