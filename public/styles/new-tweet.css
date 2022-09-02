@@ -4,16 +4,11 @@ section.new-tweet h2 {
 
 .new-tweet {
   width: 100%;
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* align-items: center; */
   margin-top: 5%;
   border-radius: 10px;
   box-shadow: 0 0 15px 0px rgb(161, 143, 143);
 
 }
-
-
 
 form {
   display: flex;
@@ -55,8 +50,6 @@ label {
   border-radius: 5px;
 }
 
-
-
 .new-tweet-btn {
   font-family: 'Bungee', sans-serif;
   background-color: #4056A1;
@@ -69,7 +62,6 @@ label {
   border-radius: 5px;
   box-shadow: 0 0 15px 1px #b8c4ef;
   cursor: pointer;
-
 }
 
 .new-tweet-footer {
