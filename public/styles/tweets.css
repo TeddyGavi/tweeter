@@ -11,21 +11,15 @@ section.tweet-container {
 }
 
 article {
-  /* display: flex; */
-  /* flex-direction: column; */
   width: 100%;
 }
 
-.tweet-display-header {
+article.tweet header {
   margin: 0;
   padding: 2.5%;
-  width: 100%;
-  height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: transparent;
-  background-image: none;
 }
 
 figure {
@@ -41,28 +35,25 @@ figure {
 figcaption {
   display: flex;
   align-items: center;
-  padding-left: 2.5%;
+  padding-left: 5%;
 }
-
 
 .tweet-body-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0;
-  
+  margin: 0;  
 }
-p.tweet-body {
-  display: flex;
+
+.tweet-body-container p {
   justify-content: flex-start;
   width: 95%;
   margin: 0;
   padding: 2.5% 0;
   border-bottom: 5px solid black;
-
 }
 
-.tweet-container-footer {
+article.tweet footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -76,17 +67,23 @@ p.tweet-body {
   align-items: center;
 }
 
-.flag, .retweet, .heart {
+.icon {
   padding: 0 5px;
   width: 1.25em;
-  fill: rgba(64, 86, 161, 1);
+  /* fill: rgba(64, 86, 161, 1); */
 }
-.fa:hover {
+
+.icon:hover {
   filter:
     invert(0.4) 
     sepia(1) 
     saturate(20) 
     hue-rotate(14.4deg)
-    brightness(0.88)
+    brightness(0.88);
+  cursor: pointer;
+  
+}
 
+.footer-date {
+  font-size: 0.5em;
 }

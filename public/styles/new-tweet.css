@@ -68,6 +68,8 @@ label {
   color: red;
   border-radius: 5px;
   box-shadow: 0 0 15px 1px #b8c4ef;
+  cursor: pointer;
+
 }
 
 .new-tweet-footer {

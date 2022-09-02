@@ -4,6 +4,7 @@ $(document).ready(function() {
   
   $("#tweet-text").on('input', function(e) {
     e.stopPropagation();
+    // console.log(e.bubbles);
     const charCount = $(this).val().length;
     const charLeft = 140 - charCount;
     const counterNum = $(this).siblings().children(".counter");
