@@ -4,7 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$(document).ready(function() {
+$(document).ready(function () {
 
   const data = [
     {
@@ -23,7 +23,8 @@ $(document).ready(function() {
       "user": {
         "name": "Descartes",
         "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
+        "handle": "@rd"
+      },
       "content": {
         "text": "Je pense , donc je suis"
       },
@@ -32,7 +33,7 @@ $(document).ready(function() {
   ];
 
   const getDaysAgo = (timeStamp) => {
-    //timesstamp must be in milliseconds
+    //timestamp must be in milliseconds
     //need to add a check for this possibly?
     const timeStampNow = new Date().getTime();
     const diffInUnix = timeStampNow - timeStamp;
@@ -40,7 +41,6 @@ $(document).ready(function() {
 
     return diffInDays;
   };
-  
 
   const renderTweet = (db) => {
     db.forEach(e => $(".tweet-container").append(createTweetElement(e)));
@@ -48,12 +48,9 @@ $(document).ready(function() {
 
   const createTweetElement = (tweet) => {
     const daysAgo = getDaysAgo(tweet.created_at);
-    
-
-    const $tweetcontainer = $(
-
-      `
-    <article class="tweet">
+    //create a new article with dynamic info from a set of hardcoded data
+    const $tweetContainer = $(
+      `<article class="tweet">
       <header>
         <figure>
           <img class="user-icon" src="${tweet.user.avatars}" alt="black outline image of user icon"/>
@@ -72,14 +69,10 @@ $(document).ready(function() {
            <i class="fa-solid fa-heart"></i>   
         </div>
       </footer>
-    </article>
-
-          `
-           
+    </article>`
     );
-    return $tweetcontainer;
+    return $tweetContainer;
   };
 
   renderTweet(data);
-
 });

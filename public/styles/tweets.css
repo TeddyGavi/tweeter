@@ -1,15 +1,3 @@
-/* section.tweet-container {
-  background-color: transparent;
-  border: 5px solid black;
-  width: 100%;
-  margin-top: 5%;
-  margin-bottom: 10%;
-}
-
-.tweet-container:hover {
-  box-shadow: 10px 10px 0px 0px rgba(64,86,161,0.11);
-} */
-
 article {
   background-color: transparent;
   border: 5px solid black;
@@ -75,19 +63,20 @@ article.tweet footer {
   align-items: center;
 }
 
-i.fa-solid {
+.social-icons.fa-solid {
   padding: 0 5px;
   width: 1.25em;
+  color: #4056A1;
 }
 
-i.fa-solid:hover {
+.social-icons.fa-solid:hover {
   color: #BF9B49;
   cursor: pointer;
 }
 
 /* 
 
-rule for playing with img tag and svg tag
+rule for playing with img tag and svg tag removed for simplicity
 
 .icon:hover {
   filter:
