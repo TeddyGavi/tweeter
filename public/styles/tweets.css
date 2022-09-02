@@ -3,7 +3,6 @@ article {
   border: 5px solid black;
   width: 100%;
   margin-top: 5%;
-  /* margin-bottom: 10%; */
 }
 
 article:hover {
@@ -16,6 +15,7 @@ article.tweet header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  white-space: nowrap;
 }
 
 figure {
