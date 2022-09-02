@@ -1,4 +1,4 @@
-section.tweet-container {
+/* section.tweet-container {
   background-color: transparent;
   border: 5px solid black;
   width: 100%;
@@ -8,10 +8,18 @@ section.tweet-container {
 
 .tweet-container:hover {
   box-shadow: 10px 10px 0px 0px rgba(64,86,161,0.11);
-}
+} */
 
 article {
+  background-color: transparent;
+  border: 5px solid black;
   width: 100%;
+  margin-top: 5%;
+  /* margin-bottom: 10%; */
+}
+
+article:hover {
+  box-shadow: 10px 10px 0px 0px rgba(64,86,161,0.11);
 }
 
 article.tweet header {
