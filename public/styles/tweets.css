@@ -1,11 +1,11 @@
-article {
+article.tweet {
   background-color: transparent;
   border: 5px solid black;
   width: 100%;
   margin-top: 5%;
 }
 
-article:hover {
+article.tweet:hover {
   box-shadow: 10px 10px 0px 0px rgba(64,86,161,0.11);
 }
 
@@ -13,15 +13,17 @@ article.tweet header {
   margin: 0;
   padding: 2.5%;
   display: flex;
+  flex: auto;
   justify-content: space-between;
   align-items: center;
-  white-space: nowrap;
 }
 
 figure {
   padding: 0;
   margin: 0;
   display: flex;
+  flex: auto;
+  flex-wrap: wrap;
 }
 
 .user-icon {
@@ -32,6 +34,9 @@ figcaption {
   display: flex;
   align-items: center;
   padding-left: 5%;
+}
+header.tag {
+  flex-wrap: wrap;
 }
 
 .tweet-body-container {
@@ -47,6 +52,8 @@ figcaption {
   margin: 0;
   padding: 2.5% 0;
   border-bottom: 5px solid black;
+  font-size: 0.75em;
+  overflow-wrap: break-word;
 }
 
 article.tweet footer {
@@ -54,11 +61,11 @@ article.tweet footer {
   justify-content: space-between;
   align-items: center;
   padding: 2.5%;
+  margin-top: 0;
 }
 
 .social-icons {
   display: flex;
-  flex-direction: row;
   justify-content: flex-end;
   align-items: center;
 }
