@@ -67,11 +67,19 @@ article.tweet footer {
   align-items: center;
 }
 
-.icon {
+i.fa-solid {
   padding: 0 5px;
   width: 1.25em;
-  /* fill: rgba(64, 86, 161, 1); */
 }
+
+i.fa-solid:hover {
+  color: #BF9B49;
+  cursor: pointer;
+}
+
+/* 
+
+rule for playing with img tag and svg tag
 
 .icon:hover {
   filter:
@@ -82,7 +90,7 @@ article.tweet footer {
     brightness(0.88);
   cursor: pointer;
   
-}
+} */
 
 .footer-date {
   font-size: 0.5em;
