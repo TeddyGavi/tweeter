@@ -22,7 +22,6 @@ $(document).ready(function () {
         console.log("done appended DB", data, charCount);
         $("#tweet-form").trigger("reset")
         $(this).find(".counter").html(140);
-        loadTweets();
       })
     }
   })
