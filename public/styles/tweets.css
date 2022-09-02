@@ -63,13 +63,13 @@ article.tweet footer {
   align-items: center;
 }
 
-.social-icons.fa-solid {
+.social-icons .fa-solid {
   padding: 0 5px;
   width: 1.25em;
   color: #4056A1;
 }
 
-.social-icons.fa-solid:hover {
+.social-icons .fa-solid:hover {
   color: #BF9B49;
   cursor: pointer;
 }
