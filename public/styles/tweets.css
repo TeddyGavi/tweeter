@@ -74,6 +74,8 @@ article.tweet footer {
   padding: 0 5px;
   width: 1.25em;
   color: #4056A1;
+  transition: all 0.5s;
+
 }
 
 .social-icons .fa-solid:hover {

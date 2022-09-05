@@ -7,6 +7,7 @@
 $(document).ready(function () {
 
   $("#tweet-error").hide(); 
+  $(".new-tweet").hide();
 
   $("#tweet-form").submit(function (e) {
     e.preventDefault();
@@ -22,11 +23,18 @@ $(document).ready(function () {
       return
     }
     $.post("/tweets", data, () => {
-      console.log("done appended DB", data, charCount);
       $("#tweet-form").trigger("reset")
       $(this).find(".counter").html(140);
       errorSection.slideUp("slow").empty();
       loadTweets();
+    })
+  })
+
+  $("#toggle-new-tweet-btn").click(function(e) {
+    e.stopPropagation();
+    $(".new-tweet").slideToggle("slow", function() {
+      $("#tweet-text").focus() 
+      //need to "unfocus" the text area after slide up??
     })
   })
 
@@ -89,7 +97,7 @@ $(document).ready(function () {
     const message = isEmpty ? "Your tweet cannot be empty!" : "Please shorten your tweet and try again!"
     const $errorContainer = $(
       `<div id="tweet-error-container">   
-       <h3><i class="fa-solid fa-triangle-exclamation"></i><strong>${message}</strong><i class="fa-solid fa-triangle-exclamation"></i></h3></div>`
+       <h3><i class="fa-solid fa-triangle-exclamation"></i><strong>${escape(message)}</strong><i class="fa-solid fa-triangle-exclamation"></i></h3></div>`
     )
     return $errorContainer
   }

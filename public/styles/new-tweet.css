@@ -30,10 +30,8 @@ label {
   text-align: start;
 }
 
-#tweet-text:focus {
-  outline: #4056A1;
-  border-radius: 5px;
-  box-shadow: 0 0 25px 1px #b8c4ef; 
+#tweet-text, .new-tweet-btn {
+  transition: all 0.5s;
 }
 
 #tweet-text {
@@ -48,6 +46,12 @@ label {
   background-color: transparent;
   border-bottom: 5px solid black;
   border-radius: 5px;
+}
+
+#tweet-text:focus {
+  outline: #4056A1;
+  border-radius: 5px;
+  box-shadow: 0 0 25px 1px #b8c4ef; 
 }
 
 .new-tweet-btn {

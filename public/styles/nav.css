@@ -14,22 +14,42 @@
   z-index: 100;
  }
 
+#nav-title {
+  font-size: 2em;
+ }
 
-.header-text-right {
+.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-text-right { 
   font-size: 1em;
   font-family: 'Source Sans Pro', sans-serif;
  }
-
- #nav-title {
-  font-size: 2em;
- }
  
-#arrow {
-  color: #FFFFFF; 
-  display: flex;
-  justify-content: center;
+ #toggle-new-tweet-btn {
+  color: #FFFFFF;
+  background-color: transparent;
+  border: none;
+  margin: 0;
  }
 
- #arrow:hover {
+ button > i:hover::before {
+  content: "\f103";
+  /* display: flex; */
+  /* transition: all 0.5s linear 0s; */
+  transition: ease-out 0.2s linear 0s;
+}
+
+ button > i:hover {
   color: red;
+  cursor: pointer;
+  margin-bottom: 8px;
+  transition: all 0.2s linear 0s;
+  transform: translateY(5px);
  }
+
+
