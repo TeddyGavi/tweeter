@@ -6,24 +6,26 @@
 
 $(document).ready(function () {
 
+  $("#tweet-error").hide(); 
+
   $("#tweet-form").submit(function (e) {
     e.preventDefault();
     e.stopPropagation();
+    const errorSection = $("#tweet-error")
     const data = $(this).serialize();
     const charCount = $(this).find(".counter").html()
-    // console.log(e, data);
     if (Number(charCount) === 140) {
-      alert("Tweet cannot be empty")
+      errorSection.append(displayError(true)).slideDown("slow")
       return
     } if (charCount < 0) {
-      alert("Character limit reached! please shorten your tweet")
+      errorSection.append(displayError(false)).slideDown("slow")
       return
     }
     $.post("/tweets", data, () => {
       console.log("done appended DB", data, charCount);
-      console.log(data);
       $("#tweet-form").trigger("reset")
       $(this).find(".counter").html(140);
+      errorSection.slideUp("slow").empty();
       loadTweets();
     })
   })
@@ -82,6 +84,15 @@ $(document).ready(function () {
     );
     return $tweetContainer;
   };
+
+  const displayError = (isEmpty) => {
+    const message = isEmpty ? "Your tweet cannot be empty!" : "Please shorten your tweet and try again!"
+    const $errorContainer = $(
+      `<div id="tweet-error-container">   
+       <h3><i class="fa-solid fa-triangle-exclamation"></i><strong>${message}</strong><i class="fa-solid fa-triangle-exclamation"></i></h3></div>`
+    )
+    return $errorContainer
+  }
 
   loadTweets();
 });

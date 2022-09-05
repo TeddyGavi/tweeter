@@ -1,0 +1,17 @@
+#tweet-error-container {
+  margin-top: 5%;
+  border: 5px solid red;;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#tweet-error-container > h3 {
+  font-style: oblique;
+  color: red;
+}
+
+i {
+  color: red;
+  padding: 0px 30px;
+}
