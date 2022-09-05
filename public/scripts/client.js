@@ -11,20 +11,29 @@ $(document).ready(function () {
     e.stopPropagation();
     const data = $(this).serialize();
     const charCount = $(this).find(".counter").html()
+    // console.log(e, data);
     if (Number(charCount) === 140) {
       alert("Tweet cannot be empty")
       return
-    } else if (charCount < 0) {
+    } if (charCount < 0) {
       alert("Character limit reached! please shorten your tweet")
       return
-    } else {
-      $.post("/tweets", data, () => {
-        console.log("done appended DB", data, charCount);
-        $("#tweet-form").trigger("reset")
-        $(this).find(".counter").html(140);
-      })
     }
+    $.post("/tweets", data, () => {
+      console.log("done appended DB", data, charCount);
+      console.log(data);
+      $("#tweet-form").trigger("reset")
+      $(this).find(".counter").html(140);
+      loadTweets();
+    })
   })
+
+  //function which prevents a XSS attack
+  const escape = (str) => {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str))
+    return div.innerHTML;
+  }
 
   const loadTweets = () => {
     $.get("/tweets", function (data) {
@@ -43,7 +52,7 @@ $(document).ready(function () {
     }; */
 
   const renderTweet = (db) => {
-    db.forEach(e => $(".tweet-container").append(createTweetElement(e)));
+    db.forEach(e => $(".tweet-container").prepend(createTweetElement(e)));
   };
 
   const createTweetElement = (tweet) => {
@@ -59,7 +68,7 @@ $(document).ready(function () {
         <div class="tag">${tweet.user.handle}</div>
       </header>
       <div class="tweet-body-container">
-        <p>${tweet.content.text}</p>
+        <p>${escape(tweet.content.text)}</p>
       </div>
       <footer>
         <div class="footer-date">${daysAgo}</div>
