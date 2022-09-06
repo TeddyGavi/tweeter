@@ -14,4 +14,18 @@
 i.fa-triangle-exclamation {
   color: red;
   padding: 0px 30px;
+  animation: flash 1s linear infinite;
+  transition: all 0.5s linear infinite;
+}
+
+@keyframes flash {
+  0% {
+    color:  #a20a0a;
+  }
+  50% {
+    color: red;
+  }
+  100% {
+    color:  #a20a0a
+  }
 }

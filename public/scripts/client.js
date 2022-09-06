@@ -12,20 +12,20 @@ $(document).ready(function () {
   $("#tweet-form").submit(function (e) {
     e.preventDefault();
     e.stopPropagation();
-    const errorSection = $("#tweet-error")
-    const data = $(this).serialize();
-    const charCount = $(this).find(".counter").html()
-    if (Number(charCount) === 140) {
-      errorSection.append(displayError(true)).slideDown("slow")
+    const $errorSection = $("#tweet-error")
+    const $data = $(this).serialize();
+    const $charCount = $(this).find(".counter").html()
+    if (Number($charCount) === 140) {
+      $errorSection.append(displayError(true)).slideDown("slow")
       return
-    } if (charCount < 0) {
-      errorSection.append(displayError(false)).slideDown("slow")
+    } if ($charCount < 0) {
+      $errorSection.append(displayError(false)).slideDown("slow")
       return
     }
-    $.post("/tweets", data, () => {
+    $.post("/tweets", $data, () => {
       $("#tweet-form").trigger("reset")
       $(this).find(".counter").html(140);
-      errorSection.slideUp("slow").empty();
+      $errorSection.slideUp("slow").empty();
       loadTweets();
     })
   })
@@ -62,6 +62,8 @@ $(document).ready(function () {
     }; */
 
   const renderTweet = (db) => {
+    //is this empty needed?
+    $(".tweet-container").empty();
     db.forEach(e => $(".tweet-container").prepend(createTweetElement(e)));
   };
 

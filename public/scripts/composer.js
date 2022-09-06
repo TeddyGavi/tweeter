@@ -10,11 +10,32 @@ $(document).ready(function() {
     const counterNum = $(this).siblings().children(".counter");
    
     counterNum.html(charLeft);
-
     counterNum.toggleClass("counter-below", charLeft < 0);
-
   });
 
-  
+const $scrollTopBtn = $(this).find("#main-footer")
+
+const scrollTop = () => {
+  document.documentElement.scrollTo({top: 0, behavior: "smooth"})
+}
+
+$scrollTopBtn.on('click', () => {
+  scrollTop();
+  $(".new-tweet").slideDown("slow", function() {
+    $("#tweet-text").focus() 
+  })
+})
+
+$(this).on("scroll", () => {
+ $("#main-footer").toggleClass("hidden", window.scrollY <= 120)
+ 
+ if (window.scrollY >= 120) {
+  $(".right").hide();
+  $("nav").addClass("hidden");
+} else {
+  $(".right").show();
+  $("nav").removeClass("hidden");
+}
+  })
 });
 

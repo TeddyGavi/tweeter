@@ -1,0 +1,39 @@
+#main-footer.hidden {
+  visibility: hidden;
+}
+
+footer > .scroll-top-btn {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  border-radius: 100%;
+  background-color: red;
+  color: #fff;
+  border: none;
+  animation: none;
+}
+
+footer > .scroll-top-btn:hover {
+  cursor: pointer;
+  animation: moveArrow 3s ease-in-out infinite;
+  transition: ease-in-out 0.2s infinite;
+}
+
+@keyframes moveArrow {
+  0% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  75% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
