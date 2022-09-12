@@ -17,9 +17,11 @@ $(document).ready(function() {
     const $data = $(this).serialize();
     const $charCount = $(this).find(".counter").html();
     if (Number($charCount) === 140) {
+      $errorSection.empty()
       $errorSection.append(displayError(true)).slideDown("slow");
       return;
     } if ($charCount < 0) {
+      $errorSection.empty()
       $errorSection.append(displayError(false)).slideDown("slow");
       return;
     }
@@ -36,7 +38,6 @@ $(document).ready(function() {
     e.stopPropagation();
     $(".new-tweet").slideToggle("slow", function() {
       $("#tweet-text").focus();
-      //need to "unfocus" the text area after slide up??
     });
   });
 

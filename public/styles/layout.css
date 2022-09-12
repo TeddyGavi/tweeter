@@ -33,9 +33,41 @@ body {
   width: 90%;
   margin: auto;
   background-color: #f4f1ec;
-  align-items: space-evenly;
+  /* align-items: space-evenly; */
   justify-content: center;
  }
 
+@media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
+  .container {
+    align-items: center;
+    width: 67.7%;
+    margin-top: 10%;
+  }
+  section#mainpage-header {
+    margin-top: 10%;
+    height: 400px;
+    width: 33.3%;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 0.5rem;
+  }
+  section header.main-header {
+    margin-top: 5%;
+    height: auto;
+    width: 90%;
+  }
+  section.new-tweet {
+    width: 90%;
+  }
+  section.tweet-container {
+    width: 90%;
+    
+  }
+}
  
