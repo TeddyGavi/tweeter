@@ -1,8 +1,15 @@
-#main-footer.hidden {
-  visibility: hidden;
+#main-footer {
+  transition: all 0.5s linear;
+  display: flex;
 }
 
-footer > .scroll-top-btn {
+#main-footer.hidden {
+  opacity: 0;
+  visibility: hidden;
+  cursor: none;
+}
+
+#main-footer > .scroll-top-btn {
   position: fixed;
   bottom: 1rem;
   right: 1rem;
@@ -10,10 +17,10 @@ footer > .scroll-top-btn {
   background-color: red;
   color: #fff;
   border: none;
-  animation: none;
+  /* animation: none; */
 }
 
-footer > .scroll-top-btn:hover {
+#main-footer > .scroll-top-btn:hover {
   cursor: pointer;
   animation: moveArrow 3s ease-in-out infinite;
   transition: ease-in-out 0.2s infinite;
@@ -36,4 +43,5 @@ footer > .scroll-top-btn:hover {
     transform: translateY(0px);
   }
 }
+
 

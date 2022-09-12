@@ -3,6 +3,7 @@ article.tweet {
   border: 5px solid black;
   width: 100%;
   margin-top: 5%;
+  overflow: hidden;
 }
 
 article.tweet:hover {
@@ -37,6 +38,7 @@ figcaption {
 }
 header.tag {
   flex-wrap: wrap;
+  overflow: hidden;
 }
 
 .tweet-body-container {
@@ -99,5 +101,5 @@ rule for playing with img tag and svg tag removed for simplicity
 } */
 
 .footer-date {
-  font-size: 0.5em;
+  font-size: 0.85rem;
 }

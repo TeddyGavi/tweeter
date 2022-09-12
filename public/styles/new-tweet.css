@@ -20,7 +20,7 @@ form {
   text-align: center;
   font-style: italic;
   font-weight: 600;
-  margin: .2em;
+  margin: .2rem;
   text-shadow:0 0 50px rgb(161, 143, 143);
 }
 
@@ -37,7 +37,7 @@ label {
 #tweet-text {
   border: none;
   width: 100%;
-  height: 3em;
+  height: 6rem;
   /* font-size: 1em; */
   padding: 0;
   display: flex;

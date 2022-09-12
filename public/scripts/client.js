@@ -4,52 +4,54 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$(document).ready(function () {
+$(document).ready(function() {
 
-  $("#tweet-error").hide(); 
+  $("#tweet-error").hide();
   $(".new-tweet").hide();
 
-  $("#tweet-form").submit(function (e) {
+  $("#tweet-form").submit(function(e) {
     e.preventDefault();
     e.stopPropagation();
-    const $errorSection = $("#tweet-error")
+    // Need to check if the tweet is above the char count, or empty! show the proper error message.
+    const $errorSection = $("#tweet-error");
     const $data = $(this).serialize();
-    const $charCount = $(this).find(".counter").html()
+    const $charCount = $(this).find(".counter").html();
     if (Number($charCount) === 140) {
-      $errorSection.append(displayError(true)).slideDown("slow")
-      return
+      $errorSection.append(displayError(true)).slideDown("slow");
+      return;
     } if ($charCount < 0) {
-      $errorSection.append(displayError(false)).slideDown("slow")
-      return
+      $errorSection.append(displayError(false)).slideDown("slow");
+      return;
     }
     $.post("/tweets", $data, () => {
-      $("#tweet-form").trigger("reset")
+      $("#tweet-form").trigger("reset");
       $(this).find(".counter").html(140);
       $errorSection.slideUp("slow").empty();
+      $(".tweet-container").empty(); // reset the tweets
       loadTweets();
-    })
-  })
+    });
+  });
 
   $("#toggle-new-tweet-btn").click(function(e) {
     e.stopPropagation();
     $(".new-tweet").slideToggle("slow", function() {
-      $("#tweet-text").focus() 
+      $("#tweet-text").focus();
       //need to "unfocus" the text area after slide up??
-    })
-  })
+    });
+  });
 
   //function which prevents a XSS attack
   const escape = (str) => {
     let div = document.createElement("div");
-    div.appendChild(document.createTextNode(str))
+    div.appendChild(document.createTextNode(str));
     return div.innerHTML;
-  }
+  };
 
   const loadTweets = () => {
-    $.get("/tweets", function (data) {
-      renderTweet(data)
-    })
-  }
+    $.get("/tweets", function(data) {
+      renderTweet(data);
+    });
+  };
   /* wrote my own function before using timeAgo
     const getDaysAgo = (timeStamp) => {
       //timestamp must be in milliseconds
@@ -62,14 +64,12 @@ $(document).ready(function () {
     }; */
 
   const renderTweet = (db) => {
-    //is this empty needed?
-    $(".tweet-container").empty();
     db.forEach(e => $(".tweet-container").prepend(createTweetElement(e)));
   };
 
   const createTweetElement = (tweet) => {
     // const daysAgo = getDaysAgo(tweet.created_at); wrote my own function before using timeAgo library
-    const daysAgo = timeago.format(tweet.created_at)
+    const daysAgo = timeago.format(tweet.created_at);
     const $tweetContainer = $(
       `<article class="tweet">
       <header>
@@ -96,13 +96,13 @@ $(document).ready(function () {
   };
 
   const displayError = (isEmpty) => {
-    const message = isEmpty ? "Your tweet cannot be empty!" : "Please shorten your tweet and try again!"
+    const message = isEmpty ? "Your tweet cannot be empty!" : "Please shorten your tweet and try again!";
     const $errorContainer = $(
       `<div id="tweet-error-container">   
        <h3><i class="fa-solid fa-triangle-exclamation"></i><strong>${escape(message)}</strong><i class="fa-solid fa-triangle-exclamation"></i></h3></div>`
-    )
-    return $errorContainer
-  }
+    );
+    return $errorContainer;
+  };
 
   loadTweets();
 });
