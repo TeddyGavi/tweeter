@@ -17,7 +17,6 @@
 
  nav.hidden {
   background-color: transparent;
-
  }
 
 #nav-title {
@@ -46,7 +45,6 @@
   font-size: 1em;
   font-family: 'Source Sans Pro', sans-serif;
  }
-
  
 #toggle-new-tweet-btn {
   color: #FFFFFF;

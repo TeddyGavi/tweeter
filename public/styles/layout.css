@@ -14,7 +14,6 @@ html {
  * Global layout stuff
  */
 
-
 body {
   color: #545149;
   background-color: #f4f1ec;
@@ -65,8 +64,12 @@ a {
     margin-top: 0;
     /* height: auto; */
     width: 90%;
+    border-radius: 5%;
+    opacity: 70%;
   }  
-  
+  section header.main-header img {
+    opacity: 100%;
+  }
   .container {
     display: flex;
     align-items: center;

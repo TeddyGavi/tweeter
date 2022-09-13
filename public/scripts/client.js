@@ -4,42 +4,9 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$(document).ready(function() {
-
+$(document).ready(function () {
   $("#tweet-error").hide();
   $(".new-tweet").hide();
-
-  $("#tweet-form").submit(function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    // Need to check if the tweet is above the char count, or empty! show the proper error message.
-    const $errorSection = $("#tweet-error");
-    const $data = $(this).serialize();
-    const $charCount = $(this).find(".counter").html();
-    if (Number($charCount) === 140) {
-      $errorSection.empty()
-      $errorSection.append(displayError(true)).slideDown("slow");
-      return;
-    } if ($charCount < 0) {
-      $errorSection.empty()
-      $errorSection.append(displayError(false)).slideDown("slow");
-      return;
-    }
-    $.post("/tweets", $data, () => {
-      $("#tweet-form").trigger("reset");
-      $(this).find(".counter").html(140);
-      $errorSection.slideUp("slow").empty();
-      $(".tweet-container").empty(); // reset the tweets
-      loadTweets();
-    });
-  });
-
-  $("#toggle-new-tweet-btn").click(function(e) {
-    e.stopPropagation();
-    $(".new-tweet").slideToggle("slow", function() {
-      $("#tweet-text").focus();
-    });
-  });
 
   //function which prevents a XSS attack
   const escape = (str) => {
@@ -49,7 +16,7 @@ $(document).ready(function() {
   };
 
   const loadTweets = () => {
-    $.get("/tweets", function(data) {
+    $.get("/tweets", function (data) {
       renderTweet(data);
     });
   };
@@ -96,6 +63,11 @@ $(document).ready(function() {
     return $tweetContainer;
   };
 
+  //clears error container, shows the proper error and hides it after 3 seconds
+  const slideError = (boolean) => {
+    $("#tweet-error").empty().append(displayError(boolean)).slideDown("slow").delay(3000).slideUp("slow")
+  }
+
   const displayError = (isEmpty) => {
     const message = isEmpty ? "Your tweet cannot be empty!" : "Please shorten your tweet and try again!";
     const $errorContainer = $(
@@ -106,4 +78,34 @@ $(document).ready(function() {
   };
 
   loadTweets();
+
+  $("#tweet-form").submit(function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    // Need to check if the tweet is above the char count, or empty! show the proper error message.
+    const $data = $(this).serialize();
+    const $charCount = $(this).find(".counter").html();
+    if (Number($charCount) === 140) {
+      slideError(true);
+      return;
+    } if (Number($charCount) < 0) {
+      slideError(false)
+      return;
+    }
+
+    $.post("/tweets", $data, () => {
+      $("#tweet-form").trigger("reset");
+      $(this).find(".counter").html(140);
+      $errorSection.slideUp("slow").empty();
+      $(".tweet-container").empty(); // reset the tweets
+      loadTweets();
+    });
+  });
+
+  $("#toggle-new-tweet-btn").click(function (e) {
+    e.stopPropagation();
+    $(".new-tweet").slideToggle("slow", function () {
+      $("#tweet-text").focus();
+    });
+  });
 });
