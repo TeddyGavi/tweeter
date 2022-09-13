@@ -14,14 +14,19 @@ html {
  * Global layout stuff
  */
 
+
 body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
-
 }
-
+a {
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  text-decoration: none;
+}
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
@@ -37,6 +42,7 @@ body {
   justify-content: center;
  }
 
+ /* desktop */
 @media only screen and (min-width: 1024px) {
   body {
     display: flex;
@@ -46,13 +52,6 @@ body {
     flex: auto;
   }
 
-  .container {
-    display: flex;
-    align-items: center;
-    width: 67.7%;
-    margin-top: 10%;
-    margin-right: 0;
-  }
   section#mainpage-header {
     margin-top: 11rem;
     height: 400px;
@@ -66,6 +65,14 @@ body {
     margin-top: 0;
     /* height: auto; */
     width: 90%;
+  }  
+  
+  .container {
+    display: flex;
+    align-items: center;
+    width: 67.7%;
+    margin-top: 10%;
+    margin-right: 0;
   }
   section.new-tweet {
     width: 90%;
@@ -77,3 +84,42 @@ body {
   }
 }
  
+/* tablet */
+@media only screen and (min-width: 768px) and (max-width: 1023px){
+  nav.navbar {
+    background-color: transparent;
+  }
+  nav.navbar .right, #toggle-new-tweet-btn {
+    text-shadow: 1px 1px 5px #545149;
+  }
+  nav #nav-title {
+    text-shadow: 0 3px 20px rgb(128, 125, 125);
+  }
+
+  section header.main-header {
+    margin-top: 0;
+    height: 520px;
+    justify-content: flex-end;
+  }
+}
+
+/* smartphone This is my best guess for basic styling!*/
+@media only screen and (max-width: 420px) {
+
+  nav.navbar .right .header-text-right {
+    display: none;
+  }
+  nav.navbar {
+    justify-content: flex-start;
+  }
+  nav.navbar .right #toggle-new-tweet-btn {
+    margin-left: 1rem;
+  }
+  #nav-title {
+    transition: all 0.5s linear;
+   }
+  
+   #nav-title.hidden {
+    font-size: 1.25rem;
+   }
+}
