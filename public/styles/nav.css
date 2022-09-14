@@ -19,59 +19,51 @@ nav.hidden {
   background-color: transparent;
 }
 
-#nav-title {
+nav #nav-title {
   font-size: 2em;
 }
-
-#nav-title.hidden {
+nav #nav-title.hidden {
   text-shadow: 0 3px 20px rgb(128, 125, 125);
 }
-
-.right {
+nav .right {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   transition: all 0.5s linear;
 }
-
-.right.hidden {
+nav .right.hidden {
   opacity: 0;
   visibility: hidden;
   cursor: none;
 }
 
-.header-text-right {
+div.right .header-text-right {
   font-size: 1em;
   font-family: "Source Sans Pro", sans-serif;
 }
-
-#toggle-new-tweet-btn {
+div.right #toggle-new-tweet-btn {
   color: #FFFFFF;
   background-color: transparent;
   border: none;
   margin: 0;
   padding: 0;
 }
-
-#toggle-new-tweet-btn:hover {
+div.right #toggle-new-tweet-btn:hover {
   cursor: pointer;
 }
-
-#toggle-new-tweet-btn > i:hover::before {
+div.right #toggle-new-tweet-btn > i:hover::before {
   content: "\f103";
   padding: 5px;
   transition: ease-out 0.2s linear 0s;
 }
-
-#toggle-new-tweet-btn > i:hover {
+div.right #toggle-new-tweet-btn > i:hover {
   color: red;
   cursor: pointer;
   margin-bottom: 8px;
   transition: all 0.2s linear 0s;
   animation: bounce 3s infinite;
 }
-
 @keyframes bounce {
   0% {
     transform: translateY(0px);

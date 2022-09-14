@@ -1,3 +1,5 @@
+@import "./constant";
+
 article.tweet {
   background-color: transparent;
   border: 5px solid black;
@@ -11,12 +13,11 @@ article.tweet:hover {
 }
 
 article.tweet header {
+  @include flexOptions(space-between, center);
+
   margin: 0;
   padding: 2.5%;
-  display: flex;
   flex: auto;
-  justify-content: space-between;
-  align-items: center;
 }
 
 figure {
@@ -32,8 +33,8 @@ figure {
 }
 
 figcaption {
-  display: flex;
-  align-items: center;
+  @include flexOptions(unset, center);
+
   padding-left: 5%;
 }
 header.tag {
@@ -75,13 +76,13 @@ article.tweet footer {
 .social-icons .fa-solid {
   padding: 0 5px;
   width: 1.25em;
-  color: #4056A1;
+  color: $navBGColor;
   transition: all 0.5s;
 
 }
 
 .social-icons .fa-solid:hover {
-  color: #BF9B49;
+  color: $socialHoverColor;
   cursor: pointer;
 }
 

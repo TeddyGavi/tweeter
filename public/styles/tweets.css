@@ -11,12 +11,12 @@ article.tweet:hover {
 }
 
 article.tweet header {
-  margin: 0;
-  padding: 2.5%;
   display: flex;
-  flex: auto;
   justify-content: space-between;
   align-items: center;
+  margin: 0;
+  padding: 2.5%;
+  flex: auto;
 }
 
 figure {
@@ -33,6 +33,7 @@ figure {
 
 figcaption {
   display: flex;
+  justify-content: unset;
   align-items: center;
   padding-left: 5%;
 }

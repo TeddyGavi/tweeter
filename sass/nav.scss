@@ -1,12 +1,10 @@
  @import "./constant";
  
- .navbar {
+
+  .navbar {
   @include flexOptions(space-between, flex-end);
   
    position: fixed;
-  //  display: flex;
-  //  justify-content: space-between;
-  //  align-items: flex-end;
    font-family: $secondaryFont;
    width: 100vw;
    height: 120px;
@@ -22,22 +20,20 @@
  nav.hidden {
    background-color: transparent;
  }
+ 
+nav {
 
  #nav-title {
    font-size: 2em;
  }
-
- #nav-title.hidden {
-   text-shadow: 0 3px 20px rgb(128, 125, 125);
- }
-
+  #nav-title.hidden {
+     text-shadow: 0 3px 20px rgb(128, 125, 125);
+  }
+ 
  .right {
   @include flexCenter();
 
-  //  display: flex;
    flex-direction: column;
-  //  justify-content: center;
-  //  align-items: center;
    transition: all 0.5s linear;
  }
 
@@ -46,7 +42,8 @@
    visibility: hidden;
    cursor: none;
  }
-
+}
+div.right {
  .header-text-right {
    font-size: 1em;
    font-family: $primaryFont;
@@ -71,13 +68,14 @@
  }
 
  #toggle-new-tweet-btn>i:hover {
-   color: red;
+   color: $keywordRed;
    cursor: pointer;
    margin-bottom: 8px;
    transition: all 0.2s linear 0s;
    animation: bounce 3s infinite;
  }
 
+ //new tweet arrow bounce up and down
  @keyframes bounce {
    0% {
      transform: translateY(0px);
@@ -99,3 +97,4 @@
      transform: translateY(0px);
    }
  }
+}

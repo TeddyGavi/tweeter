@@ -46,14 +46,19 @@
       </div>
       <div class="right">
         <div class="header-text-right"><strong>Write</strong>&nbsp;a new tweet </div>
-          <button id="toggle-new-tweet-btn"><i class="fa-solid fa-angle-down"></i></button>
+          <button id="toggle-new-tweet-btn">
+            <i class="fa-solid fa-angle-down"></i>
+          </button>
       </div>
     </nav>
   
   <section id="mainpage-header"> 
     <header class="main-header">
-      <img src="/images/profile-hex.png"> 
-      <h2>Your Name</h2>
+      <!-- https://www.flaticon.com/free-icon/emotions_2804224?related_id=2804224 
+      
+      <a href="https://www.flaticon.com/free-icons/emotions" title="emotions icons">Emotions icons created by Freepik - Flaticon</a>-->
+      <img class="head-img" src="/images/emotions.png"> 
+      <p>Matt Davis</p>
     </header>
   </section> 
      
@@ -64,7 +69,6 @@
 
       <!-- tweet form -->
       <section class="new-tweet">
-        <h2 class="form-title">Compose Tweet</h2>
         <form id="tweet-form" action="/tweets" method="POST">
           <label for="tweet-text">What are you humming about?</label>
           <textarea placeholder="hmm..." wrap="hard" spellcheck="true" name="text" id="tweet-text"></textarea>

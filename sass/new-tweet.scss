@@ -1,27 +1,19 @@
-section.new-tweet h2 {
-  display: none;
-}
+@import "./constant";
 
-.new-tweet {
-  width: 100%;
-  margin-top: 5%;
-  border-radius: 10px;
-  box-shadow: 0 0 15px 0px rgb(161, 143, 143);
+section {
+  &.new-tweet {
+    width: 100%;
+    margin-top: 5%;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 0px rgb(161, 143, 143);
 
-}
+  }
 
-form {
-  display: flex;
-  flex-direction: column;
-  padding: .5em;
-}
-
-.form-title {
-  text-align: center;
-  font-style: italic;
-  font-weight: 600;
-  margin: .2rem;
-  text-shadow:0 0 50px rgb(161, 143, 143);
+  form {
+    display: flex;
+    flex-direction: column;
+    padding: .5em;
+  }
 }
 
 label {
@@ -30,18 +22,18 @@ label {
   text-align: start;
 }
 
-#tweet-text, .new-tweet-btn {
+#tweet-text,
+.new-tweet-btn {
   transition: all 0.5s;
 }
 
 #tweet-text {
+  @include flexOptions(center, unset);
+
   border: none;
   width: 100%;
   height: 6rem;
-  /* font-size: 1em; */
   padding: 0;
-  display: flex;
-  justify-content: center;
   resize: none;
   background-color: transparent;
   border-bottom: 5px solid black;
@@ -49,33 +41,33 @@ label {
 }
 
 #tweet-text:focus {
-  outline: #4056A1;
+  outline: $navBGColor;
   border-radius: 5px;
-  box-shadow: 0 0 25px 1px #b8c4ef; 
+  box-shadow: 0 0 25px 1px #b8c4ef;
 }
 
 .new-tweet-btn {
-  font-family: 'Bungee', sans-serif;
-  background-color: #4056A1;
-  color: #FFFFFF; 
+  font-family: $secondaryFont;
+  background-color: $navBGColor;
+  color: $fontTextWhite;
   border-radius: 5px;
 }
 
 .new-tweet-btn:hover {
-  color: red;
+  color: $keywordRed;
   border-radius: 5px;
   box-shadow: 0 0 15px 1px #b8c4ef;
   cursor: pointer;
 }
 
 .new-tweet-footer {
+  @include flexOptions(space-between, unset);
+
   margin-top: 20px;
-  font-family: 'Bungee', sans-serif;
-  display: flex;
+  font-family: $secondaryFont;
   flex-direction: row;
-  justify-content: space-between;;
 }
 
 .counter.counter-below {
-  color: red;
+  color: $keywordRed;
 }
