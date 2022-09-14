@@ -1,5 +1,4 @@
 // colors
-
 $primaryBGColor: #f4f1ec;
 $navBGColor: #4056A1;
 $socialHoverColor: #BF9B49;
@@ -7,15 +6,11 @@ $fontTextWhite: #FFFFFF;
 $errorFlashColor: #a20a0a;
 $keywordRed: red;
 
-
-
 // fonts
 $primaryFont: "Source Sans Pro", sans-serif;
 $secondaryFont: 'Bungee', sans-serif;
 
-
 // mixins
-
 @mixin flexCenter {
   display: flex;
   justify-content: center;
