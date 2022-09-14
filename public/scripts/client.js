@@ -4,43 +4,41 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$(document).ready(function() {
-  $("#tweet-error").hide();
-  $(".new-tweet").hide();
 
-  //function which prevents a XSS attack
-  const escape = (str) => {
-    let div = document.createElement("div");
-    div.appendChild(document.createTextNode(str));
-    return div.innerHTML;
-  };
 
-  const loadTweets = () => {
-    $.get("/tweets", function(data) {
-      renderTweet(data);
-    });
-  };
+//function which prevents a XSS attack
+const escape = (str) => {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
 
-  /* wrote my own function before using timeAgo DEPRECATED
-    const getDaysAgo = (timeStamp) => {
-      //timestamp must be in milliseconds
-      //need to add a check for this possibly?
-      const timeStampNow = new Date().getTime();
-      const diffInUnix = timeStampNow - timeStamp;
-      const diffInDays = Math.floor(diffInUnix / 1000 / 60 / 60 / 24);
-  
-      return diffInDays;
-    }; */
+const loadTweets = () => {
+  $.get("/tweets", function (data) {
+    renderTweet(data);
+  });
+};
 
-  const renderTweet = (db) => {
-    db.forEach(e => $(".tweet-container").prepend(createTweetElement(e)));
-  };
+/* wrote my own function before using timeAgo DEPRECATED
+  const getDaysAgo = (timeStamp) => {
+    //timestamp must be in milliseconds
+    //need to add a check for this possibly?
+    const timeStampNow = new Date().getTime();
+    const diffInUnix = timeStampNow - timeStamp;
+    const diffInDays = Math.floor(diffInUnix / 1000 / 60 / 60 / 24);
+ 
+    return diffInDays;
+  }; */
 
-  const createTweetElement = (tweet) => {
-    // const daysAgo = getDaysAgo(tweet.created_at); wrote my own function before using timeAgo library
-    const daysAgo = timeago.format(tweet.created_at);
-    const $tweetContainer = $(
-      `<article class="tweet">
+const renderTweet = (db) => {
+  db.forEach(e => $(".tweet-container").prepend(createTweetElement(e)));
+};
+
+const createTweetElement = (tweet) => {
+  // const daysAgo = getDaysAgo(tweet.created_at); wrote my own function before using timeAgo library
+  const daysAgo = timeago.format(tweet.created_at);
+  const $tweetContainer = $(
+    `<article class="tweet">
       <header>
         <figure>
           <img class="user-icon" src="${tweet.user.avatars}" alt="black outline image of user icon"/>
@@ -60,27 +58,30 @@ $(document).ready(function() {
         </div>
       </footer>
     </article>`
-    );
-    return $tweetContainer;
-  };
+  );
+  return $tweetContainer;
+};
 
-  //clears error container, shows the proper error and hides it after 3 seconds
-  const slideError = (boolean) => {
-    $("#tweet-error").empty().append(displayError(boolean)).slideDown("slow");
-  };
+//clears error container, shows the proper error and hides it after 3 seconds
+const slideError = (boolean) => {
+  $("#tweet-error").empty().append(displayError(boolean)).slideDown("slow");
+};
 
-  const displayError = (isEmpty) => {
-    const message = isEmpty ? "Your tweet cannot be empty!" : "Please shorten your tweet and try again!";
-    const $errorContainer = $(
-      `<div id="tweet-error-container">   
+const displayError = (isEmpty) => {
+  const message = isEmpty ? "Your tweet cannot be empty!" : "Please shorten your tweet and try again!";
+  const $errorContainer = $(
+    `<div id="tweet-error-container">   
        <h3><i class="fa-solid fa-triangle-exclamation"></i><strong>${escape(message)}</strong><i class="fa-solid fa-triangle-exclamation"></i></h3></div>`
-    );
-    return $errorContainer;
-  };
+  );
+  return $errorContainer;
+};
 
+$(document).ready(function () {
+  $("#tweet-error").hide();
+  $(".new-tweet").hide();
   loadTweets();
 
-  $("#tweet-form").submit(function(e) {
+  $("#tweet-form").submit(function (e) {
     e.preventDefault();
     e.stopPropagation();
     // Need to check if the tweet is above the char count, or empty! show the proper error message.
@@ -102,11 +103,12 @@ $(document).ready(function() {
       $(".tweet-container").empty(); // reset the tweets
       loadTweets();
     });
+    $(".new-tweet").delay(500).slideUp("slow");
   });
 
-  $("#toggle-new-tweet-btn").click(function(e) {
+  $("#toggle-new-tweet-btn").click(function (e) {
     e.stopPropagation();
-    $(".new-tweet").slideToggle("slow", function() {
+    $(".new-tweet").slideToggle("slow", function () {
       $("#tweet-text").focus();
     });
   });

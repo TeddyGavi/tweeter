@@ -3,7 +3,7 @@ section#mainpage-header {
 }
 section header.main-header {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   margin-top: 120px;
   flex-direction: column;
@@ -13,7 +13,7 @@ section header.main-header {
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 section header img.head-img {
-  height: 50%;
+  height: 200px;
 }
 section header p {
   text-shadow: 2px 2px rgba(64, 86, 161, 0.11);

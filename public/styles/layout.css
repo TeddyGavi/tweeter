@@ -46,10 +46,9 @@ a {
 @media only screen and (min-width: 1024px) {
   body {
     display: flex;
-    align-items: baseline;
   }
   section#mainpage-header {
-    margin-top: 11rem;
+    margin-top: 10rem;
     height: 400px;
     width: 33.3%;
     justify-content: center;
@@ -59,12 +58,12 @@ a {
     margin-top: 0;
     width: 90%;
     border-radius: 5%;
+    justify-content: center;
   }
   section header.main-header img {
     opacity: 100%;
   }
   .container {
-    display: flex;
     align-items: center;
     width: 67.7%;
     margin-top: 10%;
@@ -92,7 +91,7 @@ a {
   section#mainpage-header header.main-header {
     margin-top: 0;
     height: 520px;
-    justify-content: flex-end;
+    justify-content: center;
   }
 }
 /* smartphone This is my best guess for basic styling!*/
