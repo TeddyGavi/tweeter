@@ -4,7 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$(document).ready(function () {
+$(document).ready(function() {
   $("#tweet-error").hide();
   $(".new-tweet").hide();
 
@@ -16,11 +16,12 @@ $(document).ready(function () {
   };
 
   const loadTweets = () => {
-    $.get("/tweets", function (data) {
+    $.get("/tweets", function(data) {
       renderTweet(data);
     });
   };
-  /* wrote my own function before using timeAgo
+
+  /* wrote my own function before using timeAgo DEPRECATED
     const getDaysAgo = (timeStamp) => {
       //timestamp must be in milliseconds
       //need to add a check for this possibly?
@@ -66,7 +67,7 @@ $(document).ready(function () {
   //clears error container, shows the proper error and hides it after 3 seconds
   const slideError = (boolean) => {
     $("#tweet-error").empty().append(displayError(boolean)).slideDown("slow");
-  }
+  };
 
   const displayError = (isEmpty) => {
     const message = isEmpty ? "Your tweet cannot be empty!" : "Please shorten your tweet and try again!";
@@ -79,7 +80,7 @@ $(document).ready(function () {
 
   loadTweets();
 
-  $("#tweet-form").submit(function (e) {
+  $("#tweet-form").submit(function(e) {
     e.preventDefault();
     e.stopPropagation();
     // Need to check if the tweet is above the char count, or empty! show the proper error message.
@@ -90,7 +91,7 @@ $(document).ready(function () {
       slideError(true);
       return;
     } if (Number($charCount) < 0) {
-      slideError(false)
+      slideError(false);
       return;
     }
 
@@ -103,9 +104,9 @@ $(document).ready(function () {
     });
   });
 
-  $("#toggle-new-tweet-btn").click(function (e) {
+  $("#toggle-new-tweet-btn").click(function(e) {
     e.stopPropagation();
-    $(".new-tweet").slideToggle("slow", function () {
+    $(".new-tweet").slideToggle("slow", function() {
       $("#tweet-text").focus();
     });
   });

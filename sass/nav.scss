@@ -1,9 +1,9 @@
  @import "./constant";
- 
 
-  .navbar {
-  @include flexOptions(space-between, flex-end);
-  
+
+ .navbar {
+   @include flexOptions(space-between, flex-end);
+
    position: fixed;
    font-family: $secondaryFont;
    width: 100vw;
@@ -20,81 +20,83 @@
  nav.hidden {
    background-color: transparent;
  }
- 
-nav {
 
- #nav-title {
-   font-size: 2em;
- }
-  #nav-title.hidden {
+ nav {
+
+   #nav-title {
+     font-size: 2em;
+   }
+
+   #nav-title.hidden {
      text-shadow: 0 3px 20px rgb(128, 125, 125);
-  }
- 
- .right {
-  @include flexCenter();
-
-   flex-direction: column;
-   transition: all 0.5s linear;
- }
-
- .right.hidden {
-   opacity: 0;
-   visibility: hidden;
-   cursor: none;
- }
-}
-div.right {
- .header-text-right {
-   font-size: 1em;
-   font-family: $primaryFont;
- }
-
- #toggle-new-tweet-btn {
-   color: $fontTextWhite;
-   background-color: transparent;
-   border: none;
-   margin: 0;
-   padding: 0;
- }
-
- #toggle-new-tweet-btn:hover {
-   cursor: pointer;
- }
-
- #toggle-new-tweet-btn>i:hover::before {
-   content: "\f103";
-   padding: 5px;
-   transition: ease-out 0.2s linear 0s;
- }
-
- #toggle-new-tweet-btn>i:hover {
-   color: $keywordRed;
-   cursor: pointer;
-   margin-bottom: 8px;
-   transition: all 0.2s linear 0s;
-   animation: bounce 3s infinite;
- }
-
- //new tweet arrow bounce up and down
- @keyframes bounce {
-   0% {
-     transform: translateY(0px);
    }
 
-   25% {
-     transform: translateY(5px);
+   .right {
+     @include flexCenter();
+
+     flex-direction: column;
+     transition: all 0.5s linear;
    }
 
-   50% {
-     transform: translateY(0px);
-   }
-
-   75% {
-     transform: translateY(5px);
-   }
-
-   100% {
-     transform: translateY(0px);
+   .right.hidden {
+     opacity: 0;
+     visibility: hidden;
+     cursor: none;
    }
  }
-}
+
+ div.right {
+   .header-text-right {
+     font-size: 1em;
+     font-family: $primaryFont;
+   }
+
+   #toggle-new-tweet-btn {
+     color: $fontTextWhite;
+     background-color: transparent;
+     border: none;
+     margin: 0;
+     padding: 0;
+   }
+
+   #toggle-new-tweet-btn:hover {
+     cursor: pointer;
+   }
+
+   #toggle-new-tweet-btn>i:hover::before {
+     content: "\f103";
+     padding: 5px;
+     transition: ease-out 0.2s linear 0s;
+   }
+
+   #toggle-new-tweet-btn>i:hover {
+     color: $keywordRed;
+     cursor: pointer;
+     margin-bottom: 8px;
+     transition: all 0.2s linear 0s;
+     animation: bounce 3s infinite;
+   }
+
+   //new tweet arrow bounce up and down
+   @keyframes bounce {
+     0% {
+       transform: translateY(0px);
+     }
+
+     25% {
+       transform: translateY(5px);
+     }
+
+     50% {
+       transform: translateY(0px);
+     }
+
+     75% {
+       transform: translateY(5px);
+     }
+
+     100% {
+       transform: translateY(0px);
+     }
+   }
+ }

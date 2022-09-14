@@ -23,6 +23,7 @@ body {
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
 }
+
 //reset all anchor tags globally
 a {
   color: inherit;
@@ -79,8 +80,6 @@ a {
 
   section.new-tweet {
     width: 90%;
-    display: flex;
-    flex-direction: column;
   }
 
   section.tweet-container {
@@ -115,22 +114,28 @@ a {
   nav {
     flex-shrink: 2;
   }
+
   nav.navbar .right .header-text-right {
     display: none;
   }
+
   nav.navbar .right #toggle-new-tweet-btn {
     margin-left: 1rem;
   }
+
   nav.navbar {
     align-items: baseline;
   }
+
   nav #nav-title {
     transition: all 0.5s linear;
   }
+
   nav #nav-title.hidden {
     font-size: 1.25rem;
   }
 }
+
 @media only screen and (max-width: 300px) {
   nav.navbar {
     flex-direction: column;
