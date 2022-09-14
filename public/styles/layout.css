@@ -35,11 +35,11 @@ a {
  */
 .container {
   display: flex;
+  justify-content: center;
+  align-items: unset;
   flex-direction: column;
   width: 90%;
   margin: auto;
-  background-color: #f4f1ec;
-  justify-content: center;
 }
 
 /* desktop */
@@ -97,29 +97,19 @@ a {
 }
 /* smartphone This is my best guess for basic styling!*/
 @media only screen and (max-width: 420px) {
-  nav {
-    flex-shrink: 2;
-  }
   nav.navbar .right .header-text-right {
     display: none;
   }
-  nav.navbar .right #toggle-new-tweet-btn {
-    margin-left: 1rem;
-  }
   nav.navbar {
     align-items: baseline;
+    flex-direction: column;
+    justify-content: center;
   }
-  nav #nav-title {
+  nav div#nav-title {
     transition: all 0.5s linear;
+    font-size: 1.75rem;
   }
   nav #nav-title.hidden {
     font-size: 1.25rem;
-  }
-}
-@media only screen and (max-width: 300px) {
-  nav.navbar {
-    flex-direction: column;
-    justify-content: center;
-    align-items: baseline;
   }
 }

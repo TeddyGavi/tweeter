@@ -1,46 +1,50 @@
 @import "./constant";
 
-article.tweet {
-  background-color: transparent;
-  border: 5px solid black;
-  width: 100%;
-  margin-top: 5%;
-  overflow: hidden;
+article {
+  &.tweet {
+    background-color: transparent;
+    border: 5px solid black;
+    width: 100%;
+    margin-top: 5%;
+    overflow: hidden;
+  }
+
+  &.tweet:hover {
+    box-shadow: 10px 10px 0px 0px rgba(64, 86, 161, 0.11);
+  }
+
+  &.tweet header {
+    @include flexOptions(space-between, center);
+
+    margin: 0;
+    padding: 2.5%;
+    flex: auto;
+  }
 }
 
-article.tweet:hover {
-  box-shadow: 10px 10px 0px 0px rgba(64, 86, 161, 0.11);
-}
+header {
+  figure {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex: auto;
+    flex-wrap: wrap;
 
-article.tweet header {
-  @include flexOptions(space-between, center);
+    img.user-icon {
+      width: 2em;
+    }
 
-  margin: 0;
-  padding: 2.5%;
-  flex: auto;
-}
+    figcaption {
+      @include flexOptions(unset, center);
 
-figure {
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex: auto;
-  flex-wrap: wrap;
-}
+      padding-left: 5%;
+    }
+  }
 
-.user-icon {
-  width: 2em;
-}
-
-figcaption {
-  @include flexOptions(unset, center);
-
-  padding-left: 5%;
-}
-
-header.tag {
-  flex-wrap: wrap;
-  overflow: hidden;
+  &.tag {
+    flex-wrap: wrap;
+    overflow: hidden;
+  }
 }
 
 .tweet-body-container {
@@ -86,21 +90,6 @@ article.tweet footer {
   color: $socialHoverColor;
   cursor: pointer;
 }
-
-/* 
-
-rule for playing with img tag and svg tag removed for simplicity
-
-.icon:hover {
-  filter:
-    invert(0.4) 
-    sepia(1) 
-    saturate(20) 
-    hue-rotate(14.4deg)
-    brightness(0.88);
-  cursor: pointer;
-  
-} */
 
 .footer-date {
   font-size: 0.85rem;

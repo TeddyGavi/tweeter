@@ -5,11 +5,9 @@ article.tweet {
   margin-top: 5%;
   overflow: hidden;
 }
-
 article.tweet:hover {
   box-shadow: 10px 10px 0px 0px rgba(64, 86, 161, 0.11);
 }
-
 article.tweet header {
   display: flex;
   justify-content: space-between;
@@ -19,25 +17,22 @@ article.tweet header {
   flex: auto;
 }
 
-figure {
+header figure {
   padding: 0;
   margin: 0;
   display: flex;
   flex: auto;
   flex-wrap: wrap;
 }
-
-.user-icon {
+header figure img.user-icon {
   width: 2em;
 }
-
-figcaption {
+header figure figcaption {
   display: flex;
   justify-content: unset;
   align-items: center;
   padding-left: 5%;
 }
-
 header.tag {
   flex-wrap: wrap;
   overflow: hidden;
@@ -86,20 +81,6 @@ article.tweet footer {
   cursor: pointer;
 }
 
-/* 
-
-rule for playing with img tag and svg tag removed for simplicity
-
-.icon:hover {
-  filter:
-    invert(0.4) 
-    sepia(1) 
-    saturate(20) 
-    hue-rotate(14.4deg)
-    brightness(0.88);
-  cursor: pointer;
-
-} */
 .footer-date {
   font-size: 0.85rem;
 }
