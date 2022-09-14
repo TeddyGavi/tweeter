@@ -7,7 +7,7 @@
 
 
 //function which prevents a XSS attack
-const escape = (str) => {
+const escapeX = (str) => {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
@@ -47,7 +47,7 @@ const createTweetElement = (tweet) => {
         <div class="tag">${tweet.user.handle}</div>
       </header>
       <div class="tweet-body-container">
-        <p>${escape(tweet.content.text)}</p>
+        <p>${escapeX(tweet.content.text)}</p>
       </div>
       <footer>
         <div class="footer-date">${daysAgo}</div>
@@ -71,11 +71,11 @@ const displayError = (isEmpty) => {
   const message = isEmpty ? "Your tweet cannot be empty!" : "Please shorten your tweet and try again!";
   const $errorContainer = $(
     `<div id="tweet-error-container">   
-       <h3><i class="fa-solid fa-triangle-exclamation"></i><strong>${escape(message)}</strong><i class="fa-solid fa-triangle-exclamation"></i></h3></div>`
+       <h3><i class="fa-solid fa-triangle-exclamation"></i><strong>${escapeX(message)}</strong><i class="fa-solid fa-triangle-exclamation"></i></h3></div>`
   );
   return $errorContainer;
 };
-
+//jQuery Begins, load page and hide errors and new tweet form
 $(document).ready(function () {
   $("#tweet-error").hide();
   $(".new-tweet").hide();
@@ -95,7 +95,7 @@ $(document).ready(function () {
       slideError(false);
       return;
     }
-
+//shorthand method to send post request to append the database
     $.post("/tweets", $data, () => {
       $("#tweet-form").trigger("reset");
       $(this).find(".counter").html(140);
@@ -105,7 +105,7 @@ $(document).ready(function () {
     });
     $(".new-tweet").delay(500).slideUp("slow");
   });
-
+  //Allows user to toggle new tweet form
   $("#toggle-new-tweet-btn").click(function (e) {
     e.stopPropagation();
     $(".new-tweet").slideToggle("slow", function () {

@@ -2,7 +2,7 @@
 
 Tweeter is a simple, single-page Twitter clone.
 
-This repository was forked from [Lighthouse Labs Tweeter](https://github.com/lighthouse-labs/tweeter)
+This project was built on the template from [Lighthouse Labs Tweeter](https://github.com/lighthouse-labs/tweeter).
 
 
 
