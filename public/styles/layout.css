@@ -47,7 +47,6 @@ a {
   body {
     display: flex;
     align-items: baseline;
-    flex: auto;
   }
   section#mainpage-header {
     margin-top: 11rem;

@@ -65,7 +65,7 @@ $(document).ready(function () {
 
   //clears error container, shows the proper error and hides it after 3 seconds
   const slideError = (boolean) => {
-    $("#tweet-error").empty().append(displayError(boolean)).slideDown("slow").delay(3000).slideUp("slow")
+    $("#tweet-error").empty().append(displayError(boolean)).slideDown("slow");
   }
 
   const displayError = (isEmpty) => {
