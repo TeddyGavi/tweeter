@@ -8,10 +8,10 @@ This project was built on the template from [Lighthouse Labs Tweeter](https://gi
 
 ### Example Usage
 
-![Gif of usage](/public/readme-imgs/tweeter.gif)
+![Gif of usage](https://github.com/TeddyGavi/tweeter/blob/master/public/readme-imgs/tweeter.gif)
 - watch out for those pesky errors!
-![Errors](/public/readme-imgs/error.png)
-![Errors](/public/readme-imgs/error1.png)
+![Errors](https://github.com/TeddyGavi/tweeter/blob/master/public/readme-imgs/error.png)
+![Errors](https://github.com/TeddyGavi/tweeter/blob/master/public/readme-imgs/error1.png)
 
 ### Getting Started
 
