@@ -12,6 +12,8 @@ This project was built on the template from [Lighthouse Labs Tweeter](https://gi
 - watch out for those pesky errors!
 ![Errors](https://github.com/TeddyGavi/tweeter/blob/master/public/readme-imgs/error.png)
 ![Errors](https://github.com/TeddyGavi/tweeter/blob/master/public/readme-imgs/error1.png)
+- responsive example!
+![screen size adjust]()
 
 ### Getting Started
 
