@@ -13,7 +13,7 @@ This project was built on the template from [Lighthouse Labs Tweeter](https://gi
 ![Errors](https://github.com/TeddyGavi/tweeter/blob/master/public/readme-imgs/error.png)
 ![Errors](https://github.com/TeddyGavi/tweeter/blob/master/public/readme-imgs/error1.png)
 - responsive example!
-![screen size adjust]()
+![screen size adjust](https://github.com/TeddyGavi/tweeter/blob/master/public/readme-imgs/tweeter-responsive.gif)
 
 ### Getting Started
 
