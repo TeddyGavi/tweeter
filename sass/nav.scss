@@ -1,0 +1,101 @@
+ @import "./constant";
+ 
+ .navbar {
+  @include flexOptions(space-between, flex-end);
+  
+   position: fixed;
+  //  display: flex;
+  //  justify-content: space-between;
+  //  align-items: flex-end;
+   font-family: $secondaryFont;
+   width: 100vw;
+   height: 120px;
+   background-color: $navBGColor;
+   color: $fontTextWhite;
+   padding-left: 1.5rem;
+   padding-right: 1.5rem;
+   padding-bottom: .25rem;
+   z-index: 100;
+   transition: all 0.5s linear;
+ }
+
+ nav.hidden {
+   background-color: transparent;
+ }
+
+ #nav-title {
+   font-size: 2em;
+ }
+
+ #nav-title.hidden {
+   text-shadow: 0 3px 20px rgb(128, 125, 125);
+ }
+
+ .right {
+  @include flexCenter();
+
+  //  display: flex;
+   flex-direction: column;
+  //  justify-content: center;
+  //  align-items: center;
+   transition: all 0.5s linear;
+ }
+
+ .right.hidden {
+   opacity: 0;
+   visibility: hidden;
+   cursor: none;
+ }
+
+ .header-text-right {
+   font-size: 1em;
+   font-family: $primaryFont;
+ }
+
+ #toggle-new-tweet-btn {
+   color: $fontTextWhite;
+   background-color: transparent;
+   border: none;
+   margin: 0;
+   padding: 0;
+ }
+
+ #toggle-new-tweet-btn:hover {
+   cursor: pointer;
+ }
+
+ #toggle-new-tweet-btn>i:hover::before {
+   content: "\f103";
+   padding: 5px;
+   transition: ease-out 0.2s linear 0s;
+ }
+
+ #toggle-new-tweet-btn>i:hover {
+   color: red;
+   cursor: pointer;
+   margin-bottom: 8px;
+   transition: all 0.2s linear 0s;
+   animation: bounce 3s infinite;
+ }
+
+ @keyframes bounce {
+   0% {
+     transform: translateY(0px);
+   }
+
+   25% {
+     transform: translateY(5px);
+   }
+
+   50% {
+     transform: translateY(0px);
+   }
+
+   75% {
+     transform: translateY(5px);
+   }
+
+   100% {
+     transform: translateY(0px);
+   }
+ }

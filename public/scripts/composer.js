@@ -36,7 +36,7 @@ $(document).ready(function () {
     })
   }
 
-  // when the scroll to top button is clicked we jump to the top of the page and the tweet text are becomes in focus
+  // when the scroll to top button is clicked we jump to the top of the page and the tweet text area becomes in focus
   $scrollTopBtn.on('click', (e) => {
     e.stopPropagation();
     scrollTop(0, scrollToAndFocus);

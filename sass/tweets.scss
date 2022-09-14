@@ -7,7 +7,7 @@ article.tweet {
 }
 
 article.tweet:hover {
-  box-shadow: 10px 10px 0px 0px rgba(64, 86, 161, 0.11);
+  box-shadow: 10px 10px 0px 0px rgba(64,86,161,0.11);
 }
 
 article.tweet header {
@@ -36,7 +36,6 @@ figcaption {
   align-items: center;
   padding-left: 5%;
 }
-
 header.tag {
   flex-wrap: wrap;
   overflow: hidden;
@@ -46,7 +45,7 @@ header.tag {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0;
+  margin: 0;  
 }
 
 .tweet-body-container p {
@@ -78,6 +77,7 @@ article.tweet footer {
   width: 1.25em;
   color: #4056A1;
   transition: all 0.5s;
+
 }
 
 .social-icons .fa-solid:hover {
@@ -97,8 +97,9 @@ rule for playing with img tag and svg tag removed for simplicity
     hue-rotate(14.4deg)
     brightness(0.88);
   cursor: pointer;
-
+  
 } */
+
 .footer-date {
   font-size: 0.85rem;
 }

@@ -1,0 +1,29 @@
+// colors
+
+$primaryBGColor: #f4f1ec;
+$navBGColor: #4056A1;
+$socialHoverColor: #BF9B49;
+$fontTextWhite: #FFFFFF;
+$errorFlashColor: #a20a0a;
+$errorRedColor: red;
+
+
+
+// fonts
+$primaryFont: "Source Sans Pro", sans-serif;
+$secondaryFont: 'Bungee', sans-serif;
+
+
+// mixin, flex, center, center
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexOptions($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}

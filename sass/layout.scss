@@ -16,11 +16,12 @@ html {
 /*
  * Global layout stuff
  */
+
 body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 a {
@@ -33,6 +34,7 @@ a {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
 .container {
   display: flex;
   flex-direction: column;
@@ -52,6 +54,7 @@ a {
     align-items: baseline;
     flex: auto;
   }
+
   section#mainpage-header {
     margin-top: 11rem;
     height: 400px;
@@ -61,6 +64,7 @@ a {
     /* padding: 1.5rem 0.5rem; */
     position: fixed;
   }
+
   section header.main-header {
     margin-top: 0;
     /* height: auto; */
@@ -68,9 +72,11 @@ a {
     border-radius: 5%;
     opacity: 70%;
   }
+
   section header.main-header img {
     opacity: 100%;
   }
+
   .container {
     display: flex;
     align-items: center;
@@ -78,35 +84,43 @@ a {
     margin-top: 10%;
     margin-right: 0;
   }
+
   section.new-tweet {
     width: 90%;
     display: flex;
     flex-direction: column;
   }
+
   section.tweet-container {
     width: 90%;
   }
 }
+
 /* tablet */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   nav.navbar {
     background-color: transparent;
   }
+
   nav.navbar .right,
-#toggle-new-tweet-btn {
+  #toggle-new-tweet-btn {
     text-shadow: 1px 1px 5px #545149;
   }
+
   nav #nav-title {
     text-shadow: 0 3px 20px rgb(128, 125, 125);
   }
+
   section header.main-header {
     margin-top: 0;
     height: 520px;
     justify-content: flex-end;
   }
 }
+
 /* smartphone This is my best guess for basic styling!*/
 @media only screen and (max-width: 420px) {
+
   nav.navbar .right .header-text-right {
     display: none;
   }
@@ -116,19 +130,26 @@ a {
   nav.navbar.hidden {
     align-items: baseline;
   }
+
   nav.navbar .right #toggle-new-tweet-btn {
     margin-left: 1rem;
   }
+
   #nav-title {
     transition: all 0.5s linear;
   }
+
   #nav-title.hidden {
     font-size: 1.25rem;
   }
 }
+
 @media only screen and (max-width: 300px) {
   nav.navbar {
     flex-direction: column;
     justify-content: center;
+  }
+  nav.navbar .right{
+
   }
 }

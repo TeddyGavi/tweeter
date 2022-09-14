@@ -1,37 +1,37 @@
- .navbar {
-  position: fixed;
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  font-family: 'Bungee', sans-serif;
+  position: fixed;
+  font-family: "Bungee", sans-serif;
   width: 100vw;
   height: 120px;
   background-color: #4056A1;
-  color: #FFFFFF; 
+  color: #FFFFFF;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  padding-bottom: .25rem;
+  padding-bottom: 0.25rem;
   z-index: 100;
   transition: all 0.5s linear;
- }
+}
 
- nav.hidden {
+nav.hidden {
   background-color: transparent;
- }
+}
 
 #nav-title {
   font-size: 2em;
- }
+}
 
- #nav-title.hidden {
+#nav-title.hidden {
   text-shadow: 0 3px 20px rgb(128, 125, 125);
- }
+}
 
 .right {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   transition: all 0.5s linear;
 }
 
@@ -41,18 +41,18 @@
   cursor: none;
 }
 
-.header-text-right { 
+.header-text-right {
   font-size: 1em;
-  font-family: 'Source Sans Pro', sans-serif;
- }
- 
+  font-family: "Source Sans Pro", sans-serif;
+}
+
 #toggle-new-tweet-btn {
   color: #FFFFFF;
   background-color: transparent;
   border: none;
   margin: 0;
   padding: 0;
- }
+}
 
 #toggle-new-tweet-btn:hover {
   cursor: pointer;
@@ -70,9 +70,9 @@
   margin-bottom: 8px;
   transition: all 0.2s linear 0s;
   animation: bounce 3s infinite;
- }
+}
 
- @keyframes bounce {
+@keyframes bounce {
   0% {
     transform: translateY(0px);
   }
@@ -89,4 +89,3 @@
     transform: translateY(0px);
   }
 }
-

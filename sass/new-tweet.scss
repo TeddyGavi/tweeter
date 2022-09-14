@@ -7,20 +7,21 @@ section.new-tweet h2 {
   margin-top: 5%;
   border-radius: 10px;
   box-shadow: 0 0 15px 0px rgb(161, 143, 143);
+
 }
 
 form {
   display: flex;
   flex-direction: column;
-  padding: 0.5em;
+  padding: .5em;
 }
 
 .form-title {
   text-align: center;
   font-style: italic;
   font-weight: 600;
-  margin: 0.2rem;
-  text-shadow: 0 0 50px rgb(161, 143, 143);
+  margin: .2rem;
+  text-shadow:0 0 50px rgb(161, 143, 143);
 }
 
 label {
@@ -50,13 +51,13 @@ label {
 #tweet-text:focus {
   outline: #4056A1;
   border-radius: 5px;
-  box-shadow: 0 0 25px 1px #b8c4ef;
+  box-shadow: 0 0 25px 1px #b8c4ef; 
 }
 
 .new-tweet-btn {
-  font-family: "Bungee", sans-serif;
+  font-family: 'Bungee', sans-serif;
   background-color: #4056A1;
-  color: #FFFFFF;
+  color: #FFFFFF; 
   border-radius: 5px;
 }
 
@@ -69,10 +70,10 @@ label {
 
 .new-tweet-footer {
   margin-top: 20px;
-  font-family: "Bungee", sans-serif;
+  font-family: 'Bungee', sans-serif;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-between;;
 }
 
 .counter.counter-below {

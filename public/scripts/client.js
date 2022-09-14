@@ -83,6 +83,7 @@ $(document).ready(function () {
     e.preventDefault();
     e.stopPropagation();
     // Need to check if the tweet is above the char count, or empty! show the proper error message.
+    const $errorSection = $("#tweet-error");
     const $data = $(this).serialize();
     const $charCount = $(this).find(".counter").html();
     if (Number($charCount) === 140) {
