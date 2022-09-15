@@ -20,7 +20,7 @@ This project was built on the template from [Lighthouse Labs Tweeter](https://gi
 - [x] Connect the frontend to a pre-built backend
 - [x] Execute on a given design spec
 
-[(Back to Top)](#tweeter)
+[(Back to Top)](#tweeter-project)
 #### My Tweeter IS:
 - A challenging, mainly, CSS project with additional jQuery and Ajax functionality  
 - The best way to learn the DOM -- who is he? Where did he come from? How to manipulate him? 
@@ -36,7 +36,7 @@ This project was built on the template from [Lighthouse Labs Tweeter](https://gi
 - Able to store local preferences upon refresh
 - Able to facilitate social media "clicks"
 
-[(Back to Top)](#tweeter)
+[(Back to Top)](#tweeter-project)
 ## Features
 - [x] *stretch* Scroll to top button animated
 - [x] *stretch* Toggle new tweet button animated
@@ -48,7 +48,7 @@ This project was built on the template from [Lighthouse Labs Tweeter](https://gi
 - [x] responsive design
 - [x] tweet length counter
 
-[(Back to Top)](#tweeter)
+[(Back to Top)](#tweeter-project)
 ## Future Goals
 - [ ] Implement "liked", "flagged", "retweeted" functionality
 - [ ] work on the error messages to display fluidly in Mobile
@@ -66,14 +66,14 @@ This project was built on the template from [Lighthouse Labs Tweeter](https://gi
 - Responsive
 ![screen size adjust](https://github.com/TeddyGavi/tweeter/blob/master/public/readme-imgs/tweeter-responsive.gif)
 
-[(Back to Top)](#tweeter)
+[(Back to Top)](#tweeter-project)
 
 ## Known Bugs
 - [x] Error handling will set a delay on the callback que despite the error already persisting
   > _Update: fixed temporarily by toggling the button disabled attribute via setTimeout._
 
 
-[(Back to Top)](#tweeter)
+[(Back to Top)](#tweeter-project)
 
 
 ### Dependencies
@@ -87,4 +87,4 @@ This project was built on the template from [Lighthouse Labs Tweeter](https://gi
 ### devDependencies 
 - nodemon
 
-[(Back to Top)](#tweeter)
+[(Back to Top)](#tweeter-project)
