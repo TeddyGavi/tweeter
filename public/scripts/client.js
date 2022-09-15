@@ -110,6 +110,7 @@ $(document).ready(function() {
     });
     $(".new-tweet").delay(500).slideUp("slow");
   });
+  
   //Allows user to toggle new tweet form
   $("#toggle-new-tweet-btn").click(function(e) {
     e.stopPropagation();
