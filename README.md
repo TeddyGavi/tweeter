@@ -14,6 +14,11 @@ This project was built on the template from [Lighthouse Labs Tweeter](https://gi
 
 ## Goals and Learning Outcomes
 
+### Outcomes
+- [x] Build a single page application
+- [x] Connect the frontend to a pre-built backend
+- [x] Execute on a given design spec
+
 ### My Tweeter IS:
 - A challenging, mainly, CSS project with additional jQuery and Ajax functionality  
 - The best way to learn the DOM -- who is he? Where did he come from? How to manipulate him? 
@@ -28,19 +33,6 @@ This project was built on the template from [Lighthouse Labs Tweeter](https://gi
 - Able to interact with an external DB
 - Able to store local preferences upon refresh
 - Able to facilitate social media "clicks"
-
-
-
-## Example Usage
-
-![Gif of usage](https://github.com/TeddyGavi/tweeter/blob/master/public/readme-imgs/tweeter.gif)
-- watch out for those pesky errors!
-![Errors](https://github.com/TeddyGavi/tweeter/blob/master/public/readme-imgs/error.png)
-![Errors](https://github.com/TeddyGavi/tweeter/blob/master/public/readme-imgs/error1.png)
-- Responsive
-![screen size adjust](https://github.com/TeddyGavi/tweeter/blob/master/public/readme-imgs/tweeter-responsive.gif)
-
-
 
 ## Features
 - [x] *stretch* Scroll to top button animated
@@ -58,9 +50,29 @@ This project was built on the template from [Lighthouse Labs Tweeter](https://gi
 - [ ] work on the error messages to display fluidly in Mobile
 - [ ] Convert more CSS into SASS
 - [ ] Rework overused HTML classes (once SASS nesting has been fully implemented)
+- [ ] Accessibility needs to be considered
 - [ ] Dark Mode??
+
+## Views
+
+![Gif of usage](https://github.com/TeddyGavi/tweeter/blob/master/public/readme-imgs/tweeter.gif)
+- Watch out for those pesky errors!
+![Errors](https://github.com/TeddyGavi/tweeter/blob/master/public/readme-imgs/error.png)
+![Errors](https://github.com/TeddyGavi/tweeter/blob/master/public/readme-imgs/error1.png)
+- Responsive
+![screen size adjust](https://github.com/TeddyGavi/tweeter/blob/master/public/readme-imgs/tweeter-responsive.gif)
+
+## Known Bugs
+- [x] Error handling will set a delay on the callback que despite the error already persisting
+  > _Update: fixed temporarily by toggling the button disabled attribute via setTimeout._
 
 ### Dependencies
 
 - Express
 - Node 5.10.x or above
+- body-parser
+- chance
+- md5
+
+### devDependencies 
+- nodemon

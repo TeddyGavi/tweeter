@@ -4,8 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-
-
 //function which prevents a XSS attack
 const escapeX = (str) => {
   let div = document.createElement("div");
@@ -14,12 +12,13 @@ const escapeX = (str) => {
 };
 
 const loadTweets = () => {
-  $.get("/tweets", function (data) {
+  $.get("/tweets", function(data) {
     renderTweet(data);
   });
 };
 
-/* wrote my own function before using timeAgo DEPRECATED
+/*
+DEPRECATED wrote my own function before using timeAgo
   const getDaysAgo = (timeStamp) => {
     //timestamp must be in milliseconds
     //need to add a check for this possibly?
@@ -28,14 +27,14 @@ const loadTweets = () => {
     const diffInDays = Math.floor(diffInUnix / 1000 / 60 / 60 / 24);
  
     return diffInDays;
-  }; */
+  };
+*/
 
 const renderTweet = (db) => {
   db.forEach(e => $(".tweet-container").prepend(createTweetElement(e)));
 };
 
 const createTweetElement = (tweet) => {
-  // const daysAgo = getDaysAgo(tweet.created_at); wrote my own function before using timeAgo library
   const daysAgo = timeago.format(tweet.created_at);
   const $tweetContainer = $(
     `<article class="tweet">
@@ -62,9 +61,10 @@ const createTweetElement = (tweet) => {
   return $tweetContainer;
 };
 
-//clears error container, shows the proper error and hides it after 3 seconds
+//clears error container, shows the proper error and hides it after 1 second
 const slideError = (boolean) => {
-  $("#tweet-error").empty().append(displayError(boolean)).slideDown("slow");
+  $("#tweet-error").empty().append(displayError(boolean)).slideDown("slow").delay(1000).slideUp("slow");
+  setTimeout('$(".new-tweet-btn").removeAttr("disabled")', 2100)
 };
 
 const displayError = (isEmpty) => {
@@ -75,27 +75,32 @@ const displayError = (isEmpty) => {
   );
   return $errorContainer;
 };
+
 //jQuery Begins, load page and hide errors and new tweet form
-$(document).ready(function () {
+$(document).ready(function() {
   $("#tweet-error").hide();
   $(".new-tweet").hide();
   loadTweets();
 
-  $("#tweet-form").submit(function (e) {
+  $("#tweet-form").submit(function(e) {
     e.preventDefault();
     e.stopPropagation();
     // Need to check if the tweet is above the char count, or empty! show the proper error message.
     const $errorSection = $("#tweet-error");
     const $data = $(this).serialize();
     const $charCount = $(this).find(".counter").html();
+    //if the tweet error container is showing an error, then do not allow clicks on the tweet button to alter anything
     if (Number($charCount) === 140) {
+      $(".new-tweet-btn").attr("disabled", "disabled")
       slideError(true);
       return;
     } if (Number($charCount) < 0) {
+      $(".new-tweet-btn").attr("disabled", "disabled")
       slideError(false);
       return;
     }
-//shorthand method to send post request to append the database
+
+    //shorthand method to send post request to append the database
     $.post("/tweets", $data, () => {
       $("#tweet-form").trigger("reset");
       $(this).find(".counter").html(140);
@@ -106,9 +111,9 @@ $(document).ready(function () {
     $(".new-tweet").delay(500).slideUp("slow");
   });
   //Allows user to toggle new tweet form
-  $("#toggle-new-tweet-btn").click(function (e) {
+  $("#toggle-new-tweet-btn").click(function(e) {
     e.stopPropagation();
-    $(".new-tweet").slideToggle("slow", function () {
+    $(".new-tweet").slideToggle("slow", function() {
       $("#tweet-text").focus();
     });
   });
