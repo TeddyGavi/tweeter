@@ -64,7 +64,7 @@ const createTweetElement = (tweet) => {
 //clears error container, shows the proper error and hides it after 1 second
 const slideError = (boolean) => {
   $("#tweet-error").empty().append(displayError(boolean)).slideDown("slow").delay(1000).slideUp("slow");
-  setTimeout('$(".new-tweet-btn").removeAttr("disabled")', 2100)
+  setTimeout('$(".new-tweet-btn").removeAttr("disabled")', 2100);
 };
 
 const displayError = (isEmpty) => {
@@ -91,11 +91,11 @@ $(document).ready(function() {
     const $charCount = $(this).find(".counter").html();
     //if the tweet error container is showing an error, then do not allow clicks on the tweet button to alter anything
     if (Number($charCount) === 140) {
-      $(".new-tweet-btn").attr("disabled", "disabled")
+      $(".new-tweet-btn").attr("disabled", "disabled");
       slideError(true);
       return;
     } if (Number($charCount) < 0) {
-      $(".new-tweet-btn").attr("disabled", "disabled")
+      $(".new-tweet-btn").attr("disabled", "disabled");
       slideError(false);
       return;
     }
@@ -110,7 +110,7 @@ $(document).ready(function() {
     });
     $(".new-tweet").delay(500).slideUp("slow");
   });
-  
+
   //Allows user to toggle new tweet form
   $("#toggle-new-tweet-btn").click(function(e) {
     e.stopPropagation();
