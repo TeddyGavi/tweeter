@@ -26,7 +26,7 @@ This project was built on the template from [Lighthouse Labs Tweeter](https://gi
 - The best way to learn the DOM -- who is he? Where did he come from? How to manipulate him? 
 - A fun way to learn about the power of DevTools
 - Instant gratification from CSS rules that work EXACTLY as intended 
-- Instant frustration management tool from CSS that have unintended consequences... 
+- An exercise in frustration management when CSS has unintended consequences... 
 - A skill set building project by experimentation and documentation reading
 
 #### My Tweeter IS NOT:
